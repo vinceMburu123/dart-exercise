@@ -48,3 +48,58 @@ void stringManipulation(String input) {
   // Length
   print('Length: ${input.length}');
 }
+
+void collectionOperations() {
+  // List Example
+  List<String> fruits = ['Apple', 'Banana', 'Mango'];
+  fruits.add('Orange');
+  fruits.remove('Apple');
+  print('List: $fruits');
+
+  // Set Example
+  Set<String> colors = {'Red', 'Green', 'Blue'};
+  colors.add('Yellow');
+  colors.remove('Red');
+  print('Set: $colors');
+
+  // Map Example
+  Map<String, int> inventory = {'Apple': 10, 'Banana': 5};
+  inventory['Orange'] = 15;
+  inventory.remove('Banana');
+  print('Map: $inventory');
+}
+
+//File handling
+import 'dart:io';
+
+void fileHandling() async {
+  try {
+    // Writing to a file
+    File file = File('output.txt');
+    await file.writeAsString('This is sample content.\n');
+
+    // Reading from a file
+    String content = await file.readAsString();
+    print('File content: $content');
+  } catch (e) {
+    print('An error occurred: $e');
+  }
+}
+//dart 
+void dateTimeOperations() {
+  DateTime now = DateTime.now();
+  print('Current date and time: $now');
+
+  // Add days
+  DateTime futureDate = now.add(Duration(days: 5));
+  print('Future date: $futureDate');
+
+  // Subtract days
+  DateTime pastDate = now.subtract(Duration(days: 5));
+  print('Past date: $pastDate');
+
+  // Difference between two dates
+  Duration diff = futureDate.difference(pastDate);
+  print('Difference in days: ${diff.inDays}');
+}
+
